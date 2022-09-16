@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Welcome to our Meal Planner</h1>
+
+  <br />
+  <h2><u><b>Recipe List</b></u></h2>
+  <br />
+  <button (click)="getListwithFilter()">Get Sandwiches</button>
+  &nbsp; &nbsp;
+  <button (click)="getRecipeList()">Get Recipe List</button>
+  &nbsp; &nbsp;
+  <button (click)="clearRecipeList()">Clear Recipe List</button>
+
+  <!--input id="search"><button onclick="getRecipe()">Search</button-->
+  <!--button onclick="getRecipe(document.getElementByID('search').value)">Search</!--button-->
+  <app-display-recipe *ngFor="let currLoadedRecipe of loadedRecipes.results"
+                      [title]=currLoadedRecipe.title
+                      [id]=currLoadedRecipe.id>
+  </app-display-recipe>
+
+
+
+</body>
+</html>
